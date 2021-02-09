@@ -20,20 +20,6 @@ public class boardApiController {
 
 
 
-    @PostMapping("/api/user")
-    public String saveUser(User user) {
-
-        System.out.println("user.getUsername() = " + user.getUsername());
-        System.out.println("user.getPassword() = " + user.getPassword());
-        System.out.println("user.getEmail() = " + user.getEmail());
-
-        user.setRole(Role.ROLE_USER);
-        userRepository.save(user);
-
-        return "회원가입완료";
-
-    }
-
 
 //    // null 값인 user를 생성해서 가져옴
 //
@@ -121,8 +107,14 @@ public class boardApiController {
 //        userRepository.save(requestUser);
 //
 //        return null;
+
+
 //    }
 
+    /**
+     *
+     * 위와 같이 update문을 사용하면 가져오는 파라미터 값만 DB컬럼에 저장된다. 가져오지 않은 컬럼은 null값을 갖는다.
+     */
 
 
 
